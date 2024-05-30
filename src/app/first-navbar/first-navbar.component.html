@@ -1,0 +1,13 @@
+<mat-toolbar class="navbar">
+    <button mat-icon-button>
+      <a><img src="../assets/home.png"/></a>
+    </button>
+    <span class="example-spacer"></span>
+    <a>link</a>
+    <button mat-button [matMenuTriggerFor]="afterMenu">Navbars</button>
+    <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button mat-menu-item routerLink="/" routerLinkActive="active">Navbar 1</button>
+      <button mat-menu-item routerLink="/second" routerLinkActive="active">Navbar 2</button>
+    </mat-menu>
+  
+  </mat-toolbar>

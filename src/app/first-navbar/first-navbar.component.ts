@@ -4,17 +4,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
-import { SecondNavbarComponent } from '../app/second-navbar/second-navbar.component';
-import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-first-navbar',
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, 
-    FirstNavbarComponent, SecondNavbarComponent, RouterModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    RouterModule],
+  templateUrl: './first-navbar.component.html',
+  styleUrl: './first-navbar.component.css'
 })
-export class AppComponent {
-  
+export class FirstNavbarComponent {
+
 }
