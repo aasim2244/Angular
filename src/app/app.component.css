@@ -5,8 +5,16 @@ table {
 .mat-mdc-form-field {
     font-size: 14px;
     width: 100%;
-  }
+}
   
-  td, th {
-    width: 25%;
-  }
+td, th {
+  width: 25%;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

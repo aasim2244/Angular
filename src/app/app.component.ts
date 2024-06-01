@@ -9,33 +9,28 @@ import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 import {MatTableModule, MatTableDataSource} from '@angular/material/table';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 
-export interface Driver {
-  driverNumber: number;
-  driverName: string;
-  teamName: string;
-}
-
-const tableData: Driver[] = [
-  {driverNumber: 1, driverName: "Max Verstappen", teamName: "Red Bull"},
-  {driverNumber: 2, driverName: "Logan Sargent", teamName: "Williams"},
-  {driverNumber: 3, driverName: "Daniel Ricciardo", teamName: "RB"},
-  {driverNumber: 4, driverName: "Lando Norris", teamName: "Mclaren"},
-  {driverNumber: 16, driverName: "Pierre Gasly", teamName: "Alpine"},
-  {driverNumber: 16, driverName: "Charles Leclerc", teamName: "Ferrari"},
-  {driverNumber: 55, driverName: "Carlos Sainz", teamName: "Ferrari"},
-  {driverNumber: 11, driverName: "Sergio Perez", teamName: "Red Bull"},
-  {driverNumber: 81, driverName: "Oscar Piastari", teamName: "Mclaren"},
-  {driverNumber: 63, driverName: "George Russell", teamName: "Mercedes"},
-  {driverNumber: 44, driverName: "Lewis Hamilton", teamName: "Mercedes"},
-  {driverNumber: 14, driverName: "Fernando Alonso", teamName: "Aston Martin"},
-  {driverNumber: 22, driverName: "Yuki Tsunoda", teamName: "RB"},
-  {driverNumber: 18, driverName: "Lance Stroll", teamName: "Aston Martin"},
-  {driverNumber: 27, driverName: "Nico Hulkenberg", teamName: "Haas"},
-  {driverNumber: 23, driverName: "Alex Albon", teamName: "Williams"},
-  {driverNumber: 77, driverName: "Valteri Bottas", teamName: "Alfa Romeo"},
-  {driverNumber: 31, driverName: "Esteban Ocon", teamName: "Alpine"},
-  {driverNumber: 24, driverName: "Gyanu Zhou", teamName: "Alfa Romeo"},
-  {driverNumber: 20, driverName: "Kevin Magnusen", teamName: "Haas"}
+const tableData = [
+  //property names have to be same as columns for sorting to work
+  {number: 1, name: "Max Verstappen", team: "Red Bull"},
+  {number: 2, name: "Logan Sargent", team: "Williams"},
+  {number: 3, name: "Daniel Ricciardo", team: "RB"},
+  {number: 4, name: "Lando Norris", team: "Mclaren"},
+  {number: 16, name: "Pierre Gasly", team: "Alpine"},
+  {number: 16, name: "Charles Leclerc", team: "Ferrari"},
+  {number: 55, name: "Carlos Sainz", team: "Ferrari"},
+  {number: 11, name: "Sergio Perez", team: "Red Bull"},
+  {number: 81, name: "Oscar Piastari", team: "Mclaren"},
+  {number: 63, name: "George Russell", team: "Mercedes"},
+  {number: 44, name: "Lewis Hamilton", team: "Mercedes"},
+  {number: 14, name: "Fernando Alonso", team: "Aston Martin"},
+  {number: 22, name: "Yuki Tsunoda", team: "RB"},
+  {number: 18, name: "Lance Stroll", team: "Aston Martin"},
+  {number: 27, name: "Nico Hulkenberg", team: "Haas"},
+  {number: 23, name: "Alex Albon", team: "Williams"},
+  {number: 77, name: "Valteri Bottas", team: "Alfa Romeo"},
+  {number: 31, name: "Esteban Ocon", team: "Alpine"},
+  {number: 24, name: "Gyanu Zhou", team: "Alfa Romeo"},
+  {number: 20, name: "Kevin Magnusen", team: "Haas"}
 ];
 
 @Component({
@@ -49,14 +44,10 @@ const tableData: Driver[] = [
 })
 
 export class AppComponent implements AfterViewInit {
-  columns: string[] = ['Number', 'Name', 'Team'];
-  dataSource: MatTableDataSource<Driver>;
-  @ViewChild(MatSort) sort: MatSort;
-  
-  constructor() {
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(tableData);
-  }
+  columns: string[] = ['number', 'name', 'team'];
+  dataSource = new MatTableDataSource(tableData);
+
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
