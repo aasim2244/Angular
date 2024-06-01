@@ -8,6 +8,9 @@ import { SecondNavbarComponent } from '../app/second-navbar/second-navbar.compon
 import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 import {MatTableModule, MatTableDataSource} from '@angular/material/table';
 import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 const tableData = [
   //property names have to be same as columns for sorting to work
@@ -15,7 +18,7 @@ const tableData = [
   {number: 2, name: "Logan Sargent", team: "Williams"},
   {number: 3, name: "Daniel Ricciardo", team: "RB"},
   {number: 4, name: "Lando Norris", team: "Mclaren"},
-  {number: 16, name: "Pierre Gasly", team: "Alpine"},
+  {number: 10, name: "Pierre Gasly", team: "Alpine"},
   {number: 16, name: "Charles Leclerc", team: "Ferrari"},
   {number: 55, name: "Carlos Sainz", team: "Ferrari"},
   {number: 11, name: "Sergio Perez", team: "Red Bull"},
@@ -38,18 +41,32 @@ const tableData = [
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, 
     FirstNavbarComponent, SecondNavbarComponent, RouterModule, 
-    MatTableModule, MatSortModule],
+    MatTableModule, MatSortModule, MatPaginatorModule, MatFormFieldModule,
+    MatInputModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent implements AfterViewInit {
   columns: string[] = ['number', 'name', 'team'];
+
+  //need to set datasource as an object of class MatTableDataSource
+  //this makes sorting work
   dataSource = new MatTableDataSource(tableData);
 
-  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatSort) 
+  sort!: MatSort;
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
