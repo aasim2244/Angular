@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field-subscript-wrapper{
+  margin-bottom: -30px;
+}
+mat-form-field{
+  margin-bottom: -30px;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+  
+td, th {
+  width: 25%;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
