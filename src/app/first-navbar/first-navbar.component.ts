@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -14,5 +14,10 @@ import {MatMenuModule} from '@angular/material/menu';
   styleUrl: './first-navbar.component.css'
 })
 export class FirstNavbarComponent {
+  @Output() onPlusClick = new EventEmitter<boolean>();
 
+  plusClick() {
+    this.onPlusClick.emit(true);
+    console.log('emit is: ', this.onPlusClick.subscribe());
+  }
 }

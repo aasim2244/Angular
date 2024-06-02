@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -27,5 +27,5 @@ import { FormComponent } from './form/form.component';
 })
 
 export class AppComponent {
- 
+  @Input() toggleStepper: boolean = false;
 }

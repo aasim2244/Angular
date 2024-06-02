@@ -7,6 +7,7 @@ import { FormComponent } from './form/form.component';
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent },
     { path: 'second', component: SecondNavbarComponent },
-    { path: 'table', component: TableComponent },
-    { path: 'form', component: FormComponent },
+    { path: 'table', component: TableComponent, outlet:'navbar2' },
+    { path: 'form', component: FormComponent, outlet:'navbar2' }
+    
 ];
