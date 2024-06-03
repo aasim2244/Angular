@@ -4,8 +4,8 @@
     </button>
     <span class="example-spacer"></span>
     <div class="example-button-row">
-      <a mat-button [routerLink]="[{outlets:{navbar2:['form']}}]" routerLinkActive="active" name="navbar2">Form</a>
-      <a mat-button [routerLink]="[{outlets:{navbar2:['table']}}]" routerLinkActive="active" name="navbar2">Table</a>
+      <a mat-button routerLink="form" routerLinkActive="active">Form</a>
+      <a mat-button routerLink="table" routerLinkActive="active">Table</a>
       <button mat-button [matMenuTriggerFor]="afterMenu">Navbars</button>
       <mat-menu #afterMenu="matMenu" xPosition="after">
         <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Navbar 1</button>
@@ -14,3 +14,4 @@
       </div>
     
   </mat-toolbar>
+  <router-outlet/>
