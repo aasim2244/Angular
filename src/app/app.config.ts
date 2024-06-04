@@ -2,9 +2,10 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { SearchServiceComponent } from './search-service/search-service.component';
+import { SearchService } from './search-service/search-service.component';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(), SearchServiceComponent]
+  providers: [provideRouter(routes), 
+    provideAnimationsAsync(), SearchService]
 
 };

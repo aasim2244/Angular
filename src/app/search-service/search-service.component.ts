@@ -9,7 +9,7 @@ import { Component, EventEmitter, Injectable } from '@angular/core';
 })
 
 @Injectable()
-export class SearchServiceComponent {
+export class SearchService {
 
   SendValueEvent: EventEmitter<string> = new EventEmitter<string>();
 

@@ -5,7 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { SearchServiceComponent } from '../search-service/search-service.component';
+import { SearchService } from '../search-service/search-service.component';
 import {MatInputModule} from '@angular/material/input';
 
 @Component({
@@ -13,19 +13,18 @@ import {MatInputModule} from '@angular/material/input';
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, 
     MatButtonModule, MatMenuModule, RouterModule, MatFormField, 
-    MatLabel, SearchServiceComponent, MatInputModule],
+    MatLabel, SearchService, MatInputModule],
   templateUrl: './second-navbar.component.html',
   styleUrl: './second-navbar.component.css'
 })
 export class SecondNavbarComponent {
   value: string = '';
   
-  constructor(private searchService: SearchServiceComponent){
+  constructor(private searchService: SearchService){
   }
 
   setValue(e: any){
     this.value = e.target.value; 
     this.searchService.SendValue(this.value);
-    console.log(this.value);
   }
 }

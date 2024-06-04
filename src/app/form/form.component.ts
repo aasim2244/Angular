@@ -8,7 +8,7 @@ import { RouterOutlet, RouterModule } from '@angular/router';
   selector: 'app-form',
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, MatSelectModule, 
-    RouterOutlet, RouterModule ],
+    RouterOutlet, RouterModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })

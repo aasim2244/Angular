@@ -9,7 +9,7 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInput, MatInputModule} from '@angular/material/input';
-import { SearchServiceComponent } from '../search-service/search-service.component';
+import { SearchService } from '../search-service/search-service.component';
 import { FormsModule } from '@angular/forms';
 
 const tableData = [
@@ -41,7 +41,7 @@ const tableData = [
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, 
     RouterModule, MatTableModule, MatSortModule, MatPaginatorModule, MatFormFieldModule,
-    MatInputModule, SearchServiceComponent, FormsModule],
+    MatInputModule, SearchService, FormsModule],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
@@ -51,7 +51,7 @@ export class TableComponent implements OnInit, AfterViewInit{
   //need to set datasource as an object of class MatTableDataSource
   //this makes sorting work
   dataSource = new MatTableDataSource(tableData);
-  searchService = inject(SearchServiceComponent);
+  searchService = inject(SearchService);
 
   @ViewChild(MatSort) 
   sort!: MatSort;

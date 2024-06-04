@@ -6,13 +6,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { SearchServiceComponent } from '../search-service/search-service.component';
+import { SearchService } from '../search-service/search-service.component';
 
 @Component({
   selector: 'app-first-navbar',
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, 
-    RouterModule, MatFormField, MatLabel, MatInputModule, SearchServiceComponent],
+    RouterModule, MatFormField, MatLabel, MatInputModule, SearchService],
   templateUrl: './first-navbar.component.html',
   styleUrl: './first-navbar.component.css'
 })
@@ -20,7 +20,7 @@ export class FirstNavbarComponent {
 
   value: string = '';
   
-  constructor(private searchService: SearchServiceComponent){
+  constructor(private searchService: SearchService){
 
   }
 
