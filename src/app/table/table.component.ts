@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -8,7 +8,9 @@ import {MatTableModule, MatTableDataSource} from '@angular/material/table';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import {MatInput, MatInputModule} from '@angular/material/input';
+import { SearchServiceComponent } from '../search-service/search-service.component';
+import { FormsModule } from '@angular/forms';
 
 const tableData = [
   //property names have to be same as columns for sorting to work
@@ -39,22 +41,33 @@ const tableData = [
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, 
     RouterModule, MatTableModule, MatSortModule, MatPaginatorModule, MatFormFieldModule,
-    MatInputModule],
+    MatInputModule, SearchServiceComponent, FormsModule],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
-export class TableComponent implements AfterViewInit{
+export class TableComponent implements OnInit, AfterViewInit{
   columns: string[] = ['number', 'name', 'team'];
 
   //need to set datasource as an object of class MatTableDataSource
   //this makes sorting work
   dataSource = new MatTableDataSource(tableData);
+  searchService = inject(SearchServiceComponent);
 
   @ViewChild(MatSort) 
   sort!: MatSort;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator
+
+  filterValue: string = "";
+  
+  ngOnInit(): void {
+    this.searchService.SendValueEvent.subscribe((value: string) => {
+      console.log(value);
+      this.dataSource.filter = value;
+      this.filterValue = value;
+    });
+  }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
