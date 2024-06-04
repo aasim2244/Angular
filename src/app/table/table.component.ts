@@ -63,7 +63,6 @@ export class TableComponent implements OnInit, AfterViewInit{
   
   ngOnInit(): void {
     this.searchService.SendValueEvent.subscribe((value: string) => {
-      console.log(value);
       this.dataSource.filter = value;
       this.filterValue = value;
     });

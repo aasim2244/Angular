@@ -26,7 +26,7 @@ export class FirstNavbarComponent {
 
   setValue(e: any){
     this.value = e.target.value; 
-    console.log(this.value);
     this.searchService.SendValue(this.value);
+    console.log(this.value);
   }
 }

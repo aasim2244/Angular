@@ -1,22 +1,21 @@
 <mat-toolbar class="navbar">
-    <button mat-icon-button>
-      <a><img src="../assets/home.png"/></a>
-    </button>
-    <span class="example-spacer"></span>
-    <mat-form-field>
-      <mat-label>Search</mat-label>
-      <input matInput type="text" (keydown)="setValue($event)">
-    </mat-form-field>
-    <span class="example-spacer"></span>
-    <div class="example-button-row">
-      <a mat-button routerLink="form" routerLinkActive="active">Form</a>
-      <a mat-button routerLink="table" routerLinkActive="active">Table</a>
-      <button mat-button [matMenuTriggerFor]="afterMenu">Navbars</button>
-      <mat-menu #afterMenu="matMenu" xPosition="after">
-        <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Navbar 1</button>
-        <button mat-menu-item routerLink="/second" robuterLinkActive="active" skipLocationChange="true">Navbar 2</button>
-      </mat-menu>
-      </div>
-    
-  </mat-toolbar>
-  <router-outlet/>
+  <button mat-icon-button>
+    <a><img src="../assets/home.png"/></a>
+  </button>
+  <span class="example-spacer"></span>
+  <mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput type="text" (keyup)="setValue($event)">
+  </mat-form-field>
+  <span class="example-spacer"></span>
+  <div class="example-button-row">
+    <a mat-button routerLink="form" routerLinkActive="active">Form</a>
+    <a mat-button routerLink="table" routerLinkActive="active">Table</a>
+    <button mat-button [matMenuTriggerFor]="afterMenu">Navbars</button>
+    <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Navbar 1</button>
+      <button mat-menu-item routerLink="/second" robuterLinkActive="active" skipLocationChange="true">Navbar 2</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<router-outlet/>

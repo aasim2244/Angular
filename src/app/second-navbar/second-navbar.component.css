@@ -1,9 +1,9 @@
 .example-spacer {
-    flex: 1 2 auto;
+    flex: 1 1 auto;
 }
 
 .navbar{
-    background-color: gray;
+    background-color: grey;
 }
 
 .example-button-row {
@@ -13,4 +13,8 @@
   
 .example-button-row .mat-mdc-button-base {
     margin: 8px 8px 8px 0;
+}
+
+mat-form-field{
+    margin-bottom: -20px;
 }
