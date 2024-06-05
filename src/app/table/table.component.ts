@@ -11,6 +11,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInput, MatInputModule} from '@angular/material/input';
 import { SearchService } from '../search-service/search-service.component';
 import { FormsModule } from '@angular/forms';
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+
 
 const tableData = [
   //property names have to be same as columns for sorting to work
@@ -61,6 +69,8 @@ export class TableComponent implements OnInit, AfterViewInit{
 
   filterValue: string = "";
   
+  constructor(public dialog: MatDialog) {}
+
   ngOnInit(): void {
     this.searchService.SendValueEvent.subscribe((value: string) => {
       this.dataSource.filter = value;
@@ -77,4 +87,16 @@ export class TableComponent implements OnInit, AfterViewInit{
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  openDialog() {
+    this.dialog.open(DialogElementsExampleDialog);
+  }
 }
+
+@Component({
+  selector: 'app-table-popup',
+  templateUrl: 'table-popup.html',
+  standalone: true,
+  imports: [MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule],
+})
+export class DialogElementsExampleDialog {}
