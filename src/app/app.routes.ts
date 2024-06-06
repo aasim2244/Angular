@@ -4,6 +4,7 @@ import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 import { NgModule } from '@angular/core';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -14,6 +15,10 @@ export const routes: Routes = [
         {
           path: 'form',
           component: FormComponent, // another child route component that the router renders
+        },
+        {
+          path: 'dashboard',
+          component: DashboardComponent, // another child route component that the router renders
         }] 
     },
     { path: 'second', component: SecondNavbarComponent, children: [
