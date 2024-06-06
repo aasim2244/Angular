@@ -40,3 +40,4 @@
 showFirstLastButtons>
 </mat-paginator>
 <button mat-flat-button color="accent" (click)="openDialog()">Open Popup</button> 
+<child-button [isDisabled]="false" (childEmitter)="consumeChildEmitter($event)"></child-button>

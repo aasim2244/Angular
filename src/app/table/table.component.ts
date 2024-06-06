@@ -18,7 +18,7 @@ import {
   MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
-
+import { ChildButtonComponent } from '../child-button/child-button.component';
 
 const tableData = [
   //property names have to be same as columns for sorting to work
@@ -49,7 +49,7 @@ const tableData = [
   standalone: true,
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, 
     RouterModule, MatTableModule, MatSortModule, MatPaginatorModule, MatFormFieldModule,
-    MatInputModule, SearchService, FormsModule],
+    MatInputModule, SearchService, FormsModule, ChildButtonComponent],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
@@ -90,6 +90,11 @@ export class TableComponent implements OnInit, AfterViewInit{
 
   openDialog() {
     this.dialog.open(DialogElementsExampleDialog);
+  }
+
+  consumeChildEmitter(event: string){
+    this.filterValue = event;
+    this.dataSource.filter = this.filterValue.trim().toLowerCase();
   }
 }
 
