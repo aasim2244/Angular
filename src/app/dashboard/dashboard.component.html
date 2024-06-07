@@ -1,6 +1,4 @@
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>one dashboard</mat-grid-tile>
-    <mat-grid-tile>two dashboard</mat-grid-tile>
-    <mat-grid-tile>three dashboard</mat-grid-tile>
-    <mat-grid-tile *ngIf="!isVisibile">four dashboard</mat-grid-tile>
+    <mat-grid-tile *ngFor="let i of dashboards">{{i}} dashboard</mat-grid-tile>
+    <mat-grid-tile *ngIf="!isVisibile">final dashboard</mat-grid-tile>
 </mat-grid-list>
