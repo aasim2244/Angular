@@ -12,12 +12,12 @@
   <div class="example-button-row">
     <button mat-button [matMenuTriggerFor]="commMenu">Communication</button>
     <mat-menu #commMenu="matMenu" xPosition="after">
-      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Intra page</button>
-      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Parent/child components</button>
-      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Sibling components</button>
-      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Unrelated components</button>
-      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">App & S3</button>
-      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">App & Node Server</button>
+      <button mat-menu-item routerLink="/intra" routerLinkActive="active" skipLocationChange="true">Intra page</button>
+      <button mat-menu-item routerLink="/parent-child" routerLinkActive="active" skipLocationChange="true">Parent/child components</button>
+      <button mat-menu-item routerLink="/siblings" routerLinkActive="active" skipLocationChange="true">Sibling components</button>
+      <button mat-menu-item routerLink="/unrelated" routerLinkActive="active" skipLocationChange="true">Unrelated components</button>
+      <button mat-menu-item routerLink="/app-s3" routerLinkActive="active" skipLocationChange="true">App & S3</button>
+      <button mat-menu-item routerLink="/app-server" routerLinkActive="active" skipLocationChange="true">App & Node Server</button>
     </mat-menu>
     <a mat-button routerLink="form" routerLinkActive="active">Form</a>
     <a mat-button routerLink="table" routerLinkActive="active">Table</a>
