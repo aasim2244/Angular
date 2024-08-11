@@ -1,6 +1,11 @@
-<p style="text-align: center; padding: 10px;">
+<p>
+  <mat-label>Open console log to see typed value in ts file</mat-label>
+  <br>
   <mat-form-field>
-    <mat-label>Input</mat-label>
-    <input matInput>
+    <input matInput #textVar (keydown)="show()">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput value="{{modelVar}}">
   </mat-form-field>
 </p>

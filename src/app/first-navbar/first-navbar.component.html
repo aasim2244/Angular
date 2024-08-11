@@ -12,6 +12,7 @@
   <div class="example-button-row">
     <button mat-button [matMenuTriggerFor]="commMenu">Communication</button>
     <mat-menu #commMenu="matMenu" xPosition="after">
+      <button mat-menu-item routerLink="/same-html" routerLinkActive="active" skipLocationChange="true">Same html page</button>
       <button mat-menu-item routerLink="/intra" routerLinkActive="active" skipLocationChange="true">Intra page</button>
       <button mat-menu-item routerLink="/parent-child" routerLinkActive="active" skipLocationChange="true">Parent/child components</button>
       <button mat-menu-item routerLink="/siblings" routerLinkActive="active" skipLocationChange="true">Sibling components</button>
