@@ -10,5 +10,4 @@ import {MatInputModule} from '@angular/material/input';
   styleUrl: './same-html.component.css'
 })
 export class SameHTMLComponent {
-
 }
