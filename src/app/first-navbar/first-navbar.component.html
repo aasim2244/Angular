@@ -14,7 +14,7 @@
     <mat-menu #commMenu="matMenu" xPosition="after">
       <button mat-menu-item routerLink="/same-html" routerLinkActive="active" skipLocationChange="true">Same html page</button>
       <button mat-menu-item routerLink="/intra" routerLinkActive="active" skipLocationChange="true">Intra page</button>
-      <button mat-button [matMenuTriggerFor]="commMenuForms">Forms</button>
+      <button [matMenuTriggerFor]="commMenuForms" mat-menu-item>Forms</button>
       <mat-menu #commMenuForms="matMenu" xPosition="after">
         <button mat-menu-item routerLink="/template" routerLinkActive="active" skipLocationChange="true">Template form page</button>
         <button mat-menu-item routerLink="/reactive" routerLinkActive="active" skipLocationChange="true">Reactive form page</button>

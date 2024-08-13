@@ -12,6 +12,8 @@ import { AppS3Component } from './app-s3/app-s3.component';
 import { UnrelatedComponent } from './unrelated/unrelated.component';
 import { SiblingsComponent } from './siblings/siblings.component';
 import { SameHTMLComponent } from './same-html/same-html.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -30,6 +32,14 @@ export const routes: Routes = [
         {
           path: 'intra',
           component: IntraPageComponent
+        },
+        {
+          path: 'template',
+          component: TemplateFormComponent
+        },
+        {
+          path: 'reactive',
+          component: ReactiveFormComponent
         },
         {
           path: 'parent-child',

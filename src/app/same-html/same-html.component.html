@@ -1,8 +1,11 @@
 <p>
   <!-- gets the entire elemnet, so can access any properties and events -->
-  <mat-label>{{textVar.value}}</mat-label>
+  <mat-label>template var [value]: {{textVar.value}}</mat-label>
+  <br>
   <br />
   <mat-form-field>
-    <input matInput #textVar placeholder="type something">
+    <input matInput #textVar placeholder="type something"
+    (focus)="true"
+    >
   </mat-form-field>
 </p>
