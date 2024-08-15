@@ -1,15 +1,18 @@
 <p>
   <mat-label>Open console log to see typed value in ts file</mat-label>
   <br>
+  <span>type something: </span>
   <mat-form-field>
-    <input matInput #textVar (keydown)="show()">
+    <input matInput #inputVarOne (keyup)="show()">
   </mat-form-field>
   <br>
+  <span>ViewChild variable: </span>
   <mat-form-field>
-    <input matInput value="{{modelVar}}">
+    <input matInput #inputVarTwo>
   </mat-form-field>
   <br>
+  <span>ngModel: </span>
   <mat-form-field>
-    <input matInput (keydown)="reveal()" [(ngModel)]="modelVar" >
+    <input matInput [(ngModel)]="textVarTsValue" >
   </mat-form-field>
 </p>

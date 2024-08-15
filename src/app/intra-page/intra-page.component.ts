@@ -14,19 +14,28 @@ import { FormsModule } from '@angular/forms';
 export class IntraPageComponent {
   
   //this is how html template variables get saved in ts
-  @ViewChild('textVar') 
-  textVarTs: ElementRef;
+  @ViewChild('inputVarOne') 
+  inputVarTs1: ElementRef;
+
+  @ViewChild('inputVarTwo') 
+  inputVarTs2: ElementRef;
 
   //this variable is a placeholder to have value transferred
   //and then shown in the html either via ngmodel or interpolation
-  modelVar: string;
+  textVarTsValue: string;
 
   show() {
-    console.log(this.textVarTs.nativeElement.value);
-    this.modelVar = this.textVarTs.nativeElement.value
+    this.textVarTsValue = this.inputVarTs1.nativeElement.value;
+    // this.inputVarTs2.nativeElement.disabled = true;
+    this.inputVarTs2.nativeElement.placeholder = "disabled";
+    this.inputVarTs2.nativeElement.style="background-color: red";
+   
+    //trying to get events assigned from backend
+    // this.inputVarTs2.nativeElement.click() +=this.test();
+    
   }
 
-  reveal() {
-    console.log(this.modelVar);
+  test(){
+    this.inputVarTs2.nativeElement.style="background-color: green";
   }
 }
