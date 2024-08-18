@@ -1,6 +1,6 @@
 <!-- need the template var to be declared and set 
  to ngForm to be called a template driven form -->
-<form #formTemplateVar="ngForm">
+<form #formTemplateVar="ngForm" (ngSubmit)="OnFormSubmit()">
   <mat-label>input: </mat-label>
   <mat-form-field>
     <input matInput 
@@ -16,8 +16,8 @@
     >
       <mat-option>None</mat-option>
       <mat-option value="opt1">Option 1</mat-option>
-      <mat-option>Option 2</mat-option>
-      <mat-option>Option 3</mat-option>
+      <mat-option value="opt2">Option 2</mat-option>
+      <mat-option value="opt3">Option 3</mat-option>
     </mat-select>
   </mat-form-field>
   <br> 
@@ -55,5 +55,11 @@
   <mat-slider>
     <input matSliderThumb name="slider" ngModel>
   </mat-slider>
+  <br>
+  <br>
+  <mat-label>Submit: </mat-label>
+  <button mat-flat-button color="warn">
+    Submit
+  </button>
   <br>
 </form>
