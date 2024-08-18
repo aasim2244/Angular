@@ -1,1 +1,63 @@
-<p>reactive-form works!</p>
+ <form>
+  <mat-label>input: </mat-label>
+  <mat-form-field>
+    <input matInput 
+      name="textInput" ngModel 
+      (keyup)="inputKeyUp()" 
+    />
+  </mat-form-field>
+  <br>
+  <mat-label>select (dropdown): </mat-label>
+  <mat-form-field>
+    <mat-select 
+      name="selectDropdown" ngModel 
+    >
+      <mat-option>None</mat-option>
+      <mat-option value="opt1">Option 1</mat-option>
+      <mat-option value="opt2">Option 2</mat-option>
+      <mat-option value="opt3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br> 
+  <mat-label>datepicker: </mat-label>
+  <!-- <mat-form-field>
+    <input matInput [matDatepicker]="picker"
+      name="datePickerInput" ngModel 
+    >
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> -->
+  <br>
+  <br>
+  <mat-label>check box: </mat-label>
+  <mat-checkbox name="checkBoxInput" ngModel>
+    Check me!
+  </mat-checkbox>
+  <br>
+  <br>
+  <mat-label>radio button: </mat-label>
+  <mat-radio-group name="radioButtonGroup" ngModel >
+    <mat-radio-button value="1">Option 1</mat-radio-button>
+    <mat-radio-button value="2">Option 2</mat-radio-button>
+  </mat-radio-group>
+  <br>
+  <br>
+  <mat-label>slider toggle: </mat-label>
+  <mat-slide-toggle name="sliderToggle" ngModel>
+    Slide me!
+  </mat-slide-toggle>
+  <br>
+  <br>
+  <mat-label>slider: </mat-label>
+  <mat-slider>
+    <input matSliderThumb name="slider" ngModel>
+  </mat-slider>
+  <br>
+  <br>
+  <mat-label>Submit: </mat-label>
+  <button mat-flat-button color="warn">
+    Submit
+  </button>
+  <br>
+</form>

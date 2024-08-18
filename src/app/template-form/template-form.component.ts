@@ -45,5 +45,4 @@ export class TemplateFormComponent {
       slider: 100
     });
   }
-
 }

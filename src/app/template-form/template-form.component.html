@@ -4,15 +4,15 @@
   <mat-label>input: </mat-label>
   <mat-form-field>
     <input matInput 
-    name="textInput" ngModel 
-    (keyup)="inputKeyUp(formTemplateVar)" 
+      name="textInput" ngModel 
+      (keyup)="inputKeyUp(formTemplateVar)" 
     />
   </mat-form-field>
   <br>
   <mat-label>select (dropdown): </mat-label>
   <mat-form-field>
     <mat-select 
-    name="selectDropdown" ngModel 
+      name="selectDropdown" ngModel 
     >
       <mat-option>None</mat-option>
       <mat-option value="opt1">Option 1</mat-option>
@@ -24,7 +24,7 @@
   <mat-label>datepicker: </mat-label>
   <mat-form-field>
     <input matInput [matDatepicker]="picker"
-    name="datePickerInput" ngModel 
+      name="datePickerInput" ngModel 
     >
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
