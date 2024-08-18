@@ -3,12 +3,17 @@
 <form #formTemplateVar="ngForm">
   <mat-label>input: </mat-label>
   <mat-form-field>
-    <input matInput (keyup)="inputKeyUp(formTemplateVar)">
+    <input matInput 
+    name="textInput" ngModel 
+    (keyup)="inputKeyUp(formTemplateVar)" 
+    />
   </mat-form-field>
   <br>
   <mat-label>select (dropdown): </mat-label>
   <mat-form-field>
-    <mat-select>
+    <mat-select 
+    name="selectDropdown" ngModel 
+    >
       <mat-option>None</mat-option>
       <mat-option value="opt1">Option 1</mat-option>
       <mat-option>Option 2</mat-option>
@@ -18,7 +23,9 @@
   <br> 
   <mat-label>datepicker: </mat-label>
   <mat-form-field>
-    <input matInput [matDatepicker]="picker">
+    <input matInput [matDatepicker]="picker"
+    name="datePickerInput" ngModel 
+    >
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -26,23 +33,27 @@
   <br>
   <br>
   <mat-label>check box: </mat-label>
-  <mat-checkbox>Check me!</mat-checkbox>
+  <mat-checkbox name="checkBoxInput" ngModel>
+    Check me!
+  </mat-checkbox>
   <br>
   <br>
   <mat-label>radio button: </mat-label>
-  <mat-radio-group>
+  <mat-radio-group name="radioButtonGroup" ngModel >
     <mat-radio-button value="1">Option 1</mat-radio-button>
     <mat-radio-button value="2">Option 2</mat-radio-button>
   </mat-radio-group>
   <br>
   <br>
   <mat-label>slider toggle: </mat-label>
-  <mat-slide-toggle>Slide me!</mat-slide-toggle>
+  <mat-slide-toggle name="sliderToggle" ngModel>
+    Slide me!
+  </mat-slide-toggle>
   <br>
   <br>
   <mat-label>slider: </mat-label>
-  <<mat-slider>
-    <input matSliderThumb>
+  <mat-slider>
+    <input matSliderThumb name="slider" ngModel>
   </mat-slider>
   <br>
 </form>

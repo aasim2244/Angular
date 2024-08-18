@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatLabel } from '@angular/material/form-field';
