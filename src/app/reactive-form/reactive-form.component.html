@@ -1,17 +1,17 @@
- <form>
+<!-- this connects form to backend
+ have to import reactive forms first -->
+<form [formGroup]="reactiveForm">
   <mat-label>input: </mat-label>
   <mat-form-field>
-    <input matInput 
-      name="textInput" ngModel 
+    <input matInput
+      formControlName="inputTextControl" 
       (keyup)="inputKeyUp()" 
     />
   </mat-form-field>
   <br>
   <mat-label>select (dropdown): </mat-label>
   <mat-form-field>
-    <mat-select 
-      name="selectDropdown" ngModel 
-    >
+    <mat-select formControlName="selectDropdownControl">
       <mat-option>None</mat-option>
       <mat-option value="opt1">Option 1</mat-option>
       <mat-option value="opt2">Option 2</mat-option>
@@ -20,38 +20,38 @@
   </mat-form-field>
   <br> 
   <mat-label>datepicker: </mat-label>
-  <!-- <mat-form-field>
-    <input matInput [matDatepicker]="picker"
-      name="datePickerInput" ngModel 
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" 
+      formControlName="datePickerInputControl"
     >
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field> -->
+  </mat-form-field>
   <br>
   <br>
   <mat-label>check box: </mat-label>
-  <mat-checkbox name="checkBoxInput" ngModel>
+  <mat-checkbox formControlName="checkboxControl">
     Check me!
   </mat-checkbox>
   <br>
   <br>
   <mat-label>radio button: </mat-label>
-  <mat-radio-group name="radioButtonGroup" ngModel >
+  <mat-radio-group formControlName="radioGroupControl">
     <mat-radio-button value="1">Option 1</mat-radio-button>
     <mat-radio-button value="2">Option 2</mat-radio-button>
   </mat-radio-group>
   <br>
   <br>
   <mat-label>slider toggle: </mat-label>
-  <mat-slide-toggle name="sliderToggle" ngModel>
+  <mat-slide-toggle formControlName="toggleControl">
     Slide me!
   </mat-slide-toggle>
   <br>
   <br>
   <mat-label>slider: </mat-label>
   <mat-slider>
-    <input matSliderThumb name="slider" ngModel>
+    <input matSliderThumb formControlName="sliderControl">
   </mat-slider>
   <br>
   <br>
