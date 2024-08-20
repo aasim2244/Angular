@@ -42,9 +42,19 @@ export class ReactiveFormComponent {
 
   OnFormSubmit(){
     console.log('form submitted with data:');
+
+    console.table(this.reactiveForm.value);
   }
 
   inputKeyUp(){
     console.log('inputKeyUp called');
+    
+    this.reactiveForm.patchValue({
+      selectDropdownControl: 'opt2',
+      checkboxControl: true,
+      radioGroupControl: '2',
+      toggleControl: true,
+      sliderControl: 100
+    });
   }
 }

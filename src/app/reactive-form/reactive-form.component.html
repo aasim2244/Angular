@@ -1,6 +1,6 @@
 <!-- this connects form to backend
  have to import reactive forms first -->
-<form [formGroup]="reactiveForm">
+<form [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmit()">
   <mat-label>input: </mat-label>
   <mat-form-field>
     <input matInput
