@@ -1,6 +1,9 @@
 <div>
   <mat-label>Parent: </mat-label>
   <mat-form-field>
-    <input matInput #textVar placeholder="type something">
+    <input matInput #textVar>
   </mat-form-field>
 </div>
+<app-child 
+  [childVariableThatAcceptsParentValue]="textVar.value">
+</app-child>

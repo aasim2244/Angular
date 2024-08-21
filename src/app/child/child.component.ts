@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
@@ -9,6 +9,10 @@ import {MatInputModule} from '@angular/material/input';
   templateUrl: './child.component.html',
   styleUrl: './child.component.css'
 })
-export class ChildComponent {
 
+export class ChildComponent{
+
+  //expecting to input this property on child tag
+  @Input('childVariableThatAcceptsParentValue')
+  childVariable: string;
 }
