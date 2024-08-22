@@ -1,1 +1,20 @@
+<div>
+  <p>parent -> child</p>
+  <p>embed child tag on parent html</p>
+  <p>add new property in child tag</p>
+  <p>add new variable in child ts</p>
+  <p>add &#64;Input('propertyName') above new variable</p>
+</div>
 <app-parent></app-parent>
+<div>
+  <p>parent <- child</p>
+  <p>add &#64;Output() above variable in child ts</p>
+  <p>set child variable to = new EventEmitter&lt;varType&gt;()</p>
+  <p>from some function, call the emit function on variable
+    w/param set to data that needs to be sent
+    childVar.emit(paramToBeSentToParent)
+  </p>
+  <p>add new event in child tag w/same name as variable</p>
+  <p>set the event to a function that accepts the parameter 
+    as $event, which is the data the child is sending</p>
+</div>

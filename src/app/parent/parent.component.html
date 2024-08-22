@@ -5,5 +5,7 @@
   </mat-form-field>
 </div>
 <app-child 
-  [childVariableThatAcceptsParentValue]="textVar.value">
+  [childVariableThatAcceptsParentValue]="textVar.value"
+  (childVariableThatSendsToParent)="getDataFromChild($event)"
+  >
 </app-child>
