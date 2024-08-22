@@ -4,10 +4,11 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SearchService } from './search-service/search-service.component';
 import { NgModel } from '@angular/forms';
+import { SiblingService } from './sibling.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), 
-    provideAnimationsAsync(), SearchService]
+    provideAnimationsAsync(), SearchService, SiblingService]
     
 
 };
