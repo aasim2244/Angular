@@ -14,6 +14,7 @@ import { SiblingsComponent } from './siblings/siblings.component';
 import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { NgModelExampleComponent } from './ng-model-example/ng-model-example.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -32,6 +33,10 @@ export const routes: Routes = [
         {
           path: 'intra',
           component: IntraPageComponent
+        },
+        {
+          path: 'ngmodel',
+          component: NgModelExampleComponent
         },
         {
           path: 'template',

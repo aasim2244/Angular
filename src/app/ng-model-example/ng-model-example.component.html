@@ -6,13 +6,14 @@
     <input matInput #inputVarOne (keyup)="inputVarOneKeyUp()">
   </mat-form-field>
   <br>
+  <span>ngModel: </span>
+  <mat-form-field>
+    <input matInput [(ngModel)]="textVarTsValue" >
+  </mat-form-field>
+  <br>
   <span>ViewChild variable: </span>
   <mat-form-field>
     <input matInput #inputVarTwo value="{{textVarTsValue}}">
   </mat-form-field>
   <br>
-  <span>Backend modifications: </span>
-  <mat-form-field>
-    <input matInput #inputVarFour>
-  </mat-form-field>
 </p>
