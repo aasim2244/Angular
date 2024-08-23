@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SameHTMLComponent } from './same-html.component';
+import { SameHTMLComponent } from './template-reference-variable.component';
 
 describe('SameHTMLComponent', () => {
   let component: SameHTMLComponent;

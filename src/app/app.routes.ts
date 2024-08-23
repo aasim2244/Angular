@@ -11,7 +11,7 @@ import { AppServerComponent } from './app-server/app-server.component';
 import { AppS3Component } from './app-s3/app-s3.component';
 import { UnrelatedComponent } from './unrelated/unrelated.component';
 import { SiblingsComponent } from './siblings/siblings.component';
-import { SameHTMLComponent } from './same-html/same-html.component';
+import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
@@ -26,8 +26,8 @@ export const routes: Routes = [
           component: FormComponent, // another child route component that the router renders
         },
         {
-          path: 'same-html',
-          component: SameHTMLComponent
+          path: 'temp-ref-var',
+          component: TemplateReferenceVariableComponent
         },
         {
           path: 'intra',

@@ -3,11 +3,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
 @Component({
-  selector: 'app-same-html',
+  selector: 'app-template-reference-variable',
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule],
-  templateUrl: './same-html.component.html',
-  styleUrl: './same-html.component.css'
+  templateUrl: './template-reference-variable.component.html',
+  styleUrl: './template-reference-variable.component.css'
 })
-export class SameHTMLComponent {
+export class TemplateReferenceVariableComponent {
 }
