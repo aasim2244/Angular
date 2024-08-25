@@ -8,4 +8,21 @@
 </div>
 <div *ngIf="showContent">
   <p>test content</p>
+  <div 
+    *ngFor="let num of list; 
+      index as i; 
+      first as f;
+      last as l;
+      count as c;
+      even as e;
+      odd as o"
+  >
+    test: {{num}} - 
+    index: {{i}} - 
+    first: {{f}} -
+    last: {{l}} -
+    count: {{c}} -
+    evenIndex: {{e}} -
+    oddIndex: {{o}} -
+  </div>
 </div>
