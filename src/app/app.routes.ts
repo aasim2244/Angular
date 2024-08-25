@@ -15,6 +15,7 @@ import { TemplateReferenceVariableComponent } from './template-reference-variabl
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NgModelExampleComponent } from './ng-model-example/ng-model-example.component';
+import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -37,6 +38,10 @@ export const routes: Routes = [
         {
           path: 'ngmodel',
           component: NgModelExampleComponent
+        },
+        {
+          path: 'structural-directives',
+          component: StructuralDirectivesComponent
         },
         {
           path: 'template',
