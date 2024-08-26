@@ -16,6 +16,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NgModelExampleComponent } from './ng-model-example/ng-model-example.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -42,6 +43,10 @@ export const routes: Routes = [
         {
           path: 'structural-directives',
           component: StructuralDirectivesComponent
+        },
+        {
+          path: 'lifecycle-hooks',
+          component: LifecycleHooksComponent
         },
         {
           path: 'template',
