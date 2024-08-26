@@ -6,8 +6,8 @@
   <br>
   <br>
 </div>
-<div *ngIf="showContent">
-  <p>test content</p>
+<div *ngIf="showContent else ifHide;">
+  <p>Ng For:</p>
   <div 
     *ngFor="let num of list; 
       index as i; 
@@ -17,12 +17,37 @@
       even as e;
       odd as o"
   >
-    test: {{num}} - 
-    index: {{i}} - 
-    first: {{f}} -
-    last: {{l}} -
-    count: {{c}} -
-    evenIndex: {{e}} -
-    oddIndex: {{o}} -
+    value: {{num}} | 
+    index: {{i}} | 
+    first: {{f}} |
+    last: {{l}} |
+    count: {{c}} |
+    evenIndex: {{e}} |
+    oddIndex: {{o}} |
   </div>
+  <div [ngSwitch]="switch">
+    <div *ngSwitchCase="'one'">
+      the one case
+    </div>
+    <div *ngSwitchDefault>
+      the default case
+    </div>
+  </div>
+</div>
+<ng-container *ngTemplateOutlet="showContent ? ngTemplateShow : ngTemplateHide">
+</ng-container>
+<div>
+  <ng-template #ifHide>
+    <p>ng-if shows when hidden selected</p>
+  </ng-template>
+</div>
+<div>
+  <ng-template #ngTemplateHide>
+    <p>ng-template when hidden selected</p>
+  </ng-template>
+</div>
+<div>
+  <ng-template #ngTemplateShow>
+    <p>ng-template when show selected</p>
+  </ng-template>
 </div>
