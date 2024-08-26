@@ -17,6 +17,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NgModelExampleComponent } from './ng-model-example/ng-model-example.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { ContentChildComponent } from './content-child/content-child.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -35,6 +36,10 @@ export const routes: Routes = [
         {
           path: 'intra',
           component: IntraPageComponent
+        },
+        {
+          path: 'content-child',
+          component: ContentChildComponent
         },
         {
           path: 'ngmodel',

@@ -1,4 +1,4 @@
-import { ElementRef } from '@angular/core';
+import { ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { Component, ViewChild } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -21,13 +21,20 @@ export class IntraPageComponent {
   @ViewChild('inputVarFour') 
   inputVarTs4: ElementRef;
 
+  //gets all childnodes from assigned tag reference variable
+  @ViewChildren('parent')
+  parentTs: QueryList<ElementRef>;
+
   //this variable is a placeholder to have value transferred
   //and then shown in the html either via ngmodel or interpolation
   textVarTsValue: string;
 
   inputVarOneKeyUp() {
     this.textVarTsValue = this.inputVarTs1.nativeElement.value;
-    
+  
+    console.log(this.parentTs.first.nativeElement);
+    this.parentTs.first.nativeElement.style = "background-color: aliceblue";
+
     this.inputVarTs4.nativeElement.placeholder = "disabled";
     this.inputVarTs4.nativeElement.style="background-color: orangered";
     this.inputVarTs4.nativeElement.onclick = () => this.changeTemplateUsingViewChild();
