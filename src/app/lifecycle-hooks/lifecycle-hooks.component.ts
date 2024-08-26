@@ -9,15 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './lifecycle-hooks.component.html',
   styleUrl: './lifecycle-hooks.component.css'
 })
-export class LifecycleHooksComponent implements 
-  OnChanges, OnInit, DoCheck, AfterContentInit,
-  AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy
-{
-  @Input('test')
-  testVar: string;
-
+export class LifecycleHooksComponent {
+  
   counter: number = 0;
 
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   this"1. ngOnChanges: called when @Input() recieved";
+  // }
 
   ngOnInit(): void {
     // console.log("in ngOnInit: ", this.counter);
@@ -42,12 +40,6 @@ export class LifecycleHooksComponent implements
   ngAfterViewChecked(): void {
     // console.log("in ngAfterViewChecked: ", this.counter);
     // this.counter++;
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("in ngOnChanges: ", this.counter);
-    console.log("in ngOnChanges: ", this.testVar);
-    this.counter++;
   }
   ngOnDestroy(): void {
     console.log("in ngOnDestroy: ", this.counter);

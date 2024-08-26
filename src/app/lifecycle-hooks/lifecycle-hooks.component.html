@@ -1,6 +1,26 @@
 <div>
-  <mat-label>Click: </mat-label>
-  <button mat-flat-button color="warn">
-    Submit
-  </button>
+  <h2>
+    1. ngOnChanges called when &#64;Input() recieved
+  </h2>
+  <h2>
+    2. ngOnInit called once, after the first ngOnChanges().
+  </h2>
+  <h2>3. ngDoCheck called after ngOnInit() on the first run 
+    and after ngOnChanges() on every change detection run.
+  </h2>
+  <h2>
+    4. ngAfterContentInit called once after the first ngDoCheck(). 
+  </h2>
+  <h2>
+    5. ngAfterContentChecked called after ngAfterContentInit() and every subsequent ngDoCheck() 
+  </h2>
+  <h2>
+    6. ngAfterViewInit called once after the first ngAfterContentChecked(). 
+  </h2>
+  <h2>
+    7. ngAfterViewChecked Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked()
+  </h2>
+  <h2>
+    8. ngOnDestroy called when clicked away from component.
+  </h2>
 </div>
