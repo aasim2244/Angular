@@ -18,6 +18,7 @@ import { NgModelExampleComponent } from './ng-model-example/ng-model-example.com
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { ContentChildComponent } from './content-child/content-child.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -32,6 +33,10 @@ export const routes: Routes = [
         {
           path: 'temp-ref-var',
           component: TemplateReferenceVariableComponent
+        },
+        {
+          path: 'pipes',
+          component: PipesComponent
         },
         {
           path: 'intra',

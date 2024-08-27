@@ -15,6 +15,7 @@
       <button [matMenuTriggerFor]="commMenuSamePage" mat-menu-item>Same html page</button>
       <mat-menu #commMenuSamePage="matMenu" xPosition="after">
         <button mat-menu-item routerLink="/temp-ref-var" routerLinkActive="active" skipLocationChange="true">Template Reference Variable</button>
+        <button mat-menu-item routerLink="/pipes" routerLinkActive="active" skipLocationChange="true">Pipes</button>
       </mat-menu>
       <button [matMenuTriggerFor]="commMenuIntraPage" mat-menu-item>Intra page</button>
       <mat-menu #commMenuIntraPage="matMenu" xPosition="after">

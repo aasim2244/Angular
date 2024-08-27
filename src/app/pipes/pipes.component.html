@@ -1,0 +1,39 @@
+<div>
+  <mat-label>Enter some words: </mat-label>
+  <mat-form-field>
+    <input matInput #textVar>
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-label>Uppercase Pipe: {{textVar.value | uppercase }}</mat-label>
+  <br>
+  <br>
+  <mat-label>Lowercase Pipe: {{textVar.value | lowercase }}</mat-label>
+  <br>
+  <br>
+  <mat-label>Lowercase Pipe: {{textVar.value | titlecase }}</mat-label>
+  <br>
+  <br>
+  <mat-label>Enter some numbers: </mat-label>
+  <mat-form-field>
+    <input matInput #numVar>
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-label>Number Pipe: {{numVar.value | number }}</mat-label>
+  <br>
+  <br>
+  <mat-label>Percent Pipe: {{numVar.value | percent }}</mat-label>
+  <br>
+  <br>
+  <mat-label>Currency Pipe: {{numVar.value | currency }}</mat-label>
+  <br> 
+  <br>
+  <mat-label>Date Pipe: {{numVar.value | date }}</mat-label>
+  <br>
+  <br>
+  <mat-label>custom Pipe: {{numVar.value | usdToCad }}</mat-label>
+  <br>
+  <br>
+  <mat-label>Other Pipes: Json, List, Map, Switch, Async</mat-label>
+</div>
