@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChild, ElementRef, ViewChild } from '@angular/core';
 import { MatLabel } from '@angular/material/form-field';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { NgIf, NgFor, NgForOf, NgSwitch, NgSwitchCase, 
@@ -14,10 +14,13 @@ import { NgIf, NgFor, NgForOf, NgSwitch, NgSwitchCase,
   styleUrl: './structural-directives.component.css'
 })
 export class StructuralDirectivesComponent implements
-  AfterViewInit{
+  AfterViewInit, AfterContentInit{
 
   @ViewChild('sliderToggle')
   slider: any;
+
+  @ContentChild("ngIf")
+  ngTemplateVar: ElementRef;
 
   showContent: boolean = false;
   list = [1,2,3,4];
@@ -29,9 +32,13 @@ export class StructuralDirectivesComponent implements
     
   }
 
+  ngAfterContentInit(): void {
+    console.log(this.ngTemplateVar);
+    this.ngTemplateVar.nativeElement.style = "background-color: red";
+  }
+
   handleSlider(){
     this.showContent = !this.showContent;
     this.switch = "one";
-    console.log(this.showContent);
   }
 }
