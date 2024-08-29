@@ -19,6 +19,7 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { ContentChildComponent } from './content-child/content-child.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { Renderer2Component } from './renderer2/renderer2.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -57,6 +58,10 @@ export const routes: Routes = [
         {
           path: 'lifecycle-hooks',
           component: LifecycleHooksComponent
+        },
+        {
+          path: 'renderer2',
+          component: Renderer2Component
         },
         {
           path: 'template',

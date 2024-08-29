@@ -1,0 +1,8 @@
+div, p{
+  text-align: center; 
+  padding: 10px;
+}
+
+.testClass{
+  background-color: red;
+}
