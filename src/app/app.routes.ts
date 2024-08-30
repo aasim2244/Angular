@@ -20,6 +20,8 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.compo
 import { ContentChildComponent } from './content-child/content-child.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { Renderer2Component } from './renderer2/renderer2.component';
+import { ZonesComponent } from './zones/zones.component';
+import { AnnotationSelectionsComponent } from './annotation-selections/annotation-selections.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -56,12 +58,20 @@ export const routes: Routes = [
           component: StructuralDirectivesComponent
         },
         {
+          path: 'annotation-selection',
+          component: AnnotationSelectionsComponent
+        },
+        {
           path: 'lifecycle-hooks',
           component: LifecycleHooksComponent
         },
         {
           path: 'renderer2',
           component: Renderer2Component
+        },
+        {
+          path: 'zones',
+          component: ZonesComponent
         },
         {
           path: 'template',

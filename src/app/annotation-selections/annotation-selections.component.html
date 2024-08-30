@@ -1,0 +1,49 @@
+<div>
+  <mat-label>radio button: </mat-label>
+  <mat-radio-group 
+    #radioButtons 
+    name="radioButtonGroup"
+    (change)="handleRadioClick($event)"
+  >
+    <mat-radio-button value="1">Option 1</mat-radio-button>
+    <mat-radio-button value="2">Option 2</mat-radio-button>
+    <mat-radio-button value="3">Option 3</mat-radio-button>
+  </mat-radio-group>
+  <br>
+  <br>
+  <div>
+    @if(value == "1"){
+      <p>1 selected</p>
+    } 
+    @else if(value == "2"){
+      <p>2 selected</p>
+    } 
+    @else if(value == "3"){
+      <p>3 selected</p>
+    } 
+    @else {
+      <p>click something</p>
+    }
+  </div>
+  <div>
+    @switch(value){
+      @case ("1") {
+        <p>switch 1 selected</p>
+      }
+      @case ("2") {
+        <p>switch 2 selected</p>
+      }
+      @case ("3") {
+        <p>switch 3 selected</p>
+      }
+      @default{
+        <p>switch click something</p>
+      }
+    }
+  </div>
+  <div>
+    @for (item of list; track $index) {
+      <p>for {{item}} selected</p>
+    }
+  </div>
+</div>
