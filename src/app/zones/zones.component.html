@@ -1,6 +1,6 @@
 <p #element 
-  (mousedown)="mouseDown($event)" (mouseup)="mouseUp($event)"
+  (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
 >
   Hover over me
 </p>
-{{position}}
+{{position | json}}

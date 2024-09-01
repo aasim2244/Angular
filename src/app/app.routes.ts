@@ -22,6 +22,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { Renderer2Component } from './renderer2/renderer2.component';
 import { ZonesComponent } from './zones/zones.component';
 import { AnnotationSelectionsComponent } from './annotation-selections/annotation-selections.component';
+import { ExternalComponent } from './external/external.component';
 
 export const routes: Routes = [
     { path: '', component: FirstNavbarComponent, children: [
@@ -88,6 +89,10 @@ export const routes: Routes = [
         {
           path: 'siblings',
           component: SiblingsComponent
+        },
+        {
+          path: 'external',
+          component: ExternalComponent
         },
         {
           path: 'unrelated',
