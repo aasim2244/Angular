@@ -1,10 +1,8 @@
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { SecondNavbarComponent } from './second-navbar/second-navbar.component';
 import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
-import { NgModule } from '@angular/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { IntraPageComponent } from './intra-page/intra-page.component';
 import { ParentChildComponent } from './parent-child/parent-child.component';
 import { AppServerComponent } from './app-server/app-server.component';

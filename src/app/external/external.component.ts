@@ -1,12 +1,15 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { from, Observable } from 'rxjs';
+import { from, map, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
 @Component({
   selector: 'app-external',
   standalone: true,
-  imports: [MatFormField, MatInput, MatLabel, CommonModule],
+  imports: [MatFormField, MatInput, MatLabel, CommonModule, HttpClientModule],
   templateUrl: './external.component.html',
   styleUrl: './external.component.css'
 })
@@ -15,18 +18,17 @@ export class ExternalComponent implements OnInit{
   urlTextBox: ElementRef;
   stream: Observable<number>;
   result: any;
+  http: HttpClient = inject(HttpClient);
 
+  
+  
   ngOnInit(): void {
-    // this.urlTextBox.nativeElement.
     const url: string = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json";
-    const data = from(fetch(url));
-    data.subscribe(
-      (response) => {
-        console.log(response)
-        this.result = response.formData();
-      }
-    );
-    // this.CreateObservable();
+    this.http.get(url)
+    .subscribe((response) => {
+      this.result = response;
+    });
+    
   }
 
   CreateObservable(){
