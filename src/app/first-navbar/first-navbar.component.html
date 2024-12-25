@@ -21,7 +21,6 @@
       <mat-menu #commMenuIntraPage="matMenu" xPosition="after">
         <button mat-menu-item routerLink="/ngmodel" routerLinkActive="active" skipLocationChange="true">Ng Model</button>
         <button mat-menu-item routerLink="/intra" routerLinkActive="active" skipLocationChange="true">ViewChild</button>
-        <button mat-menu-item routerLink="/content-child" routerLinkActive="active" skipLocationChange="true">ContentChild</button>
         <button [matMenuTriggerFor]="commMenuForms" mat-menu-item>Forms</button>
         <mat-menu #commMenuForms="matMenu" xPosition="after">
           <button mat-menu-item routerLink="/template" routerLinkActive="active" skipLocationChange="true">Template form page</button>
@@ -38,20 +37,22 @@
         <button mat-menu-item routerLink="/parent-child" routerLinkActive="active" skipLocationChange="true">Ng Content</button>
       </mat-menu>
       <button mat-menu-item routerLink="/siblings" routerLinkActive="active" skipLocationChange="true">Sibling components</button>
-      <button [matMenuTriggerFor]="commMenuUnrelated" mat-menu-item>Unrealted Components</button>
+      
+      <button mat-menu-item routerLink="/external" routerLinkActive="active" skipLocationChange="true">External - RxJS</button>
+      
+    </mat-menu>
+    <a mat-button routerLink="table" routerLinkActive="active">Table</a>
+    <button mat-button [matMenuTriggerFor]="afterMenu">To be Implemented</button>
+    <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button [matMenuTriggerFor]="commMenuUnrelated" mat-menu-item>Unrelated Components</button>
       <mat-menu #commMenuUnrelated="matMenu" xPosition="after">
         <button mat-menu-item routerLink="/unrelated" routerLinkActive="active" skipLocationChange="true">NgRx - State Management</button>
       </mat-menu>
-      <button mat-menu-item routerLink="/external" routerLinkActive="active" skipLocationChange="true">External - RxJS</button>
-      <button mat-menu-item routerLink="/app-s3" routerLinkActive="active" skipLocationChange="true">App & S3</button>
-      <button mat-menu-item routerLink="/app-server" routerLinkActive="active" skipLocationChange="true">App & Node Server</button>
-    </mat-menu>
-    <a mat-button routerLink="form" routerLinkActive="active">Form</a>
-    <a mat-button routerLink="table" routerLinkActive="active">Table</a>
-    <button mat-button [matMenuTriggerFor]="afterMenu">Navbars</button>
-    <mat-menu #afterMenu="matMenu" xPosition="after">
-      <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange="true">Navbar 1</button>
-      <button mat-menu-item routerLink="/second" robuterLinkActive="active" skipLocationChange="true">Navbar 2</button>
+      <button [matMenuTriggerFor]="commMenuExternal" mat-menu-item>External</button>
+      <mat-menu #commMenuExternal="matMenu" xPosition="after">
+        <button mat-menu-item routerLink="/app-s3" routerLinkActive="active" skipLocationChange="true">App & S3</button>
+        <button mat-menu-item routerLink="/app-server" routerLinkActive="active" skipLocationChange="true">App & Node Server</button>
+      </mat-menu>
     </mat-menu>
   </div>
 </mat-toolbar>

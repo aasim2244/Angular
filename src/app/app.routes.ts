@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
-import { SecondNavbarComponent } from './second-navbar/second-navbar.component';
 import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 import { TableComponent } from './table/table.component';
-import { FormComponent } from './form/form.component';
 import { IntraPageComponent } from './intra-page/intra-page.component';
 import { ParentChildComponent } from './parent-child/parent-child.component';
 import { AppServerComponent } from './app-server/app-server.component';
@@ -15,7 +13,6 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NgModelExampleComponent } from './ng-model-example/ng-model-example.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
-import { ContentChildComponent } from './content-child/content-child.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { Renderer2Component } from './renderer2/renderer2.component';
 import { ZonesComponent } from './zones/zones.component';
@@ -29,10 +26,6 @@ export const routes: Routes = [
           component: TableComponent, // child route component that the router renders
         },
         {
-          path: 'form',
-          component: FormComponent, // another child route component that the router renders
-        },
-        {
           path: 'temp-ref-var',
           component: TemplateReferenceVariableComponent
         },
@@ -43,10 +36,6 @@ export const routes: Routes = [
         {
           path: 'intra',
           component: IntraPageComponent
-        },
-        {
-          path: 'content-child',
-          component: ContentChildComponent
         },
         {
           path: 'ngmodel',
@@ -104,15 +93,5 @@ export const routes: Routes = [
           path: 'app-server',
           component: AppServerComponent 
         }] 
-    },
-    { path: 'second', component: SecondNavbarComponent, children: [
-        {
-          path: 'table', // child route path
-          component: TableComponent, // child route component that the router renders
-        },
-        {
-          path: 'form',
-          component: FormComponent, // another child route component that the router renders
-        }]
     }
 ];
