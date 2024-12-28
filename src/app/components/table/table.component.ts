@@ -9,7 +9,7 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInput, MatInputModule} from '@angular/material/input';
-import { SearchService } from '../search-service/search-service.component';
+import { SearchService } from '../../services/search-service/search-service.component';
 import { FormsModule } from '@angular/forms';
 import {
   MatDialog,

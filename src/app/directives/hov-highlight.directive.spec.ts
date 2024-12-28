@@ -1,4 +1,4 @@
-import { HovHighlightDirective } from './hov-highlight.directive';
+import { HovHighlightDirective } from '../hov-highlight.directive';
 
 describe('HovHighlightDirective', () => {
   it('should create an instance', () => {

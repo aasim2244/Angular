@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, inject, ViewChild } from '@angula
 import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatLabel } from '@angular/material/form-field';
-import { SiblingService } from '../sibling.service';
+import { SiblingService } from '../services/sibling-service/sibling.service';
 @Component({
   selector: 'app-sibling-one',
   standalone: true,

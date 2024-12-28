@@ -2,9 +2,9 @@ import { ApplicationConfig, NgModule } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { SearchService } from './search-service/search-service.component';
+import { SearchService } from './services/search-service/search-service.component';
 import { NgModel } from '@angular/forms';
-import { SiblingService } from './sibling.service';
+import { SiblingService } from './services/sibling-service/sibling.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), 

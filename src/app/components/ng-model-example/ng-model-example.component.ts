@@ -3,8 +3,8 @@ import { Component, ViewChild } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { HovHighlightDirective } from '../hov-highlight.directive';
-import { OrientationDirective } from '../orientation.directive';
+import { HovHighlightDirective } from '../../directives/hov-highlight.directive';
+import { OrientationDirective } from '../../directives/orientation.directive';
 @Component({
   selector: 'app-ng-model-example',
   standalone: true,
