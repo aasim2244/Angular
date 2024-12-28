@@ -5,10 +5,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { SearchService } from './services/search-service/search-service.component';
 import { NgModel } from '@angular/forms';
 import { SiblingService } from './services/sibling-service/sibling.service';
+import { SearchSubjectService } from './services/search-subject-service/search-subject.service';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), 
-    provideAnimationsAsync(), SearchService, SiblingService]
+  providers: [provideRouter(routes), provideAnimationsAsync(), 
+    SearchService, SiblingService, SearchSubjectService]
     
 
 };
