@@ -6,7 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { SearchSubjectService } from '../../services/search-subject-service/search-subject.service';
+import { SearchSignalService } from '../../services/search-signal-service/search-signal.service';
 
 @Component({
   selector: 'app-first-navbar',
@@ -22,7 +22,7 @@ export class FirstNavbarComponent implements AfterViewInit{
 
   value: string = '';
   
-  constructor(private searchSubjectService: SearchSubjectService){
+  constructor(private searchSignalService: SearchSignalService){
   }
   ngAfterViewInit(): void {
     this.setValue(this.searchBar.nativeElement.value);
@@ -30,7 +30,6 @@ export class FirstNavbarComponent implements AfterViewInit{
 
   setValue(e: any){
     this.value = e.target.value; 
-    this.searchSubjectService.SendValue(this.value);
-    console.log(this.value);
+    this.searchSignalService.SendValue(this.value);
   }
 }

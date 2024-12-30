@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, computed, effect, inject } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -9,7 +9,7 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInput, MatInputModule} from '@angular/material/input';
-import { SearchSubjectService } from '../../services/search-subject-service/search-subject.service';
+import { SearchSignalService } from '../../services/search-signal-service/search-signal.service';
 import { FormsModule } from '@angular/forms';
 import {
   MatDialog,
@@ -53,13 +53,13 @@ const tableData = [
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
-export class TableComponent implements OnInit, AfterViewInit{
+export class TableComponent implements AfterViewInit{
   columns: string[] = ['number', 'name', 'team'];
 
   //need to set datasource as an object of class MatTableDataSource
   //this makes sorting work
   dataSource = new MatTableDataSource(tableData);
-  searchService = inject(SearchSubjectService);
+  searchService = inject(SearchSignalService);
 
   @ViewChild(MatSort) 
   sort!: MatSort;
@@ -69,10 +69,10 @@ export class TableComponent implements OnInit, AfterViewInit{
 
   filterValue: string = "";
   
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    effect(() => {
+      let value = this.searchService.searchValue();
 
-  ngOnInit(): void {
-    this.searchService.SendValueEvent.subscribe((value: string) => {
       this.dataSource.filter = value;
       this.filterValue = value;
     });
